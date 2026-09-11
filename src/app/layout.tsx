@@ -1,31 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
+const body = DM_Sans({ variable: "--font-body", subsets: ["latin"], display: "swap" });
+const siteUrl = process.env.PORTFOLIO_SITE_URL || "https://merissali.com";
+const description = "Merissa Li is a hands-on product manager working across growth, experimentation, and AI workflows. Explore selected work at Rosetta Stone, IXL, and Clearco.";
 export const metadata: Metadata = {
-  title: "Persona — A portfolio starter kit for coding agents",
-  description: "Build a personal portfolio that feels designed around you, not filled into a template.",
+  metadataBase: new URL(new URL(siteUrl).origin),
+  title: "Merissa Li | Product Manager & Hands-on Builder", description,
+  authors: [{ name: "Merissa Li" }],
+  openGraph: { title: "Merissa Li | Product Manager & Hands-on Builder", description, type: "website", locale: "en_US", url: siteUrl, siteName: "Merissa Li" },
+  twitter: { card: "summary_large_image", title: "Merissa Li | Product Manager", description },
 };
-
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="en" className="dark">
-      <body
-        className={`${inter.variable} antialiased bg-neutral-950 text-neutral-100`}
-        suppressHydrationWarning
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="en"><body className={`${body.variable} antialiased`}>{children}</body></html>;
 }

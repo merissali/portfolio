@@ -44,3 +44,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Personal setup inputs stay local; published assets live in public/.
+/profile.yaml
+/materials/documents/*
+/materials/images/*
