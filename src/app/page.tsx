@@ -1,8 +1,6 @@
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Plus, Sparkles, Camera, Dumbbell, MapPin } from "lucide-react";
 
-const basePath = process.env.GITHUB_PAGES_BASE_PATH || "";
-
 const projects = [
   { number: "01", company: "ROSETTA STONE", category: "Growth & experimentation", title: "A little less friction. A lot more possibility.", description: "Building an experimentation capability from scratch, then putting it to work on the path from choosing a plan to checking out.", metric: "+26%", label: "plan-selection-to-checkout conversion", color: "pink", detail: "I partnered directly with engineers to define and build Rosetta Stone’s first in-house A/B testing framework. With that capability in place, I shipped changes to the purchase journey that improved conversion from plan selection to checkout by 26%.", extra: "I also led landing pages, checkout, and account creation for the consumer subscription relaunch. Within two months, the product reached 14K paid subscribers and $190K in monthly recurring revenue, with a 42% trial-to-paid conversion rate.", tags: ["Experiment design", "Acquisition", "Analytics"] },
   { number: "02", company: "ROSETTA STONE", category: "AI-powered workflows", title: "From a blank page to 300,000+ assets.", description: "Making AI content generation work across a core learning feature, with written copy, images, and audio at scale.", metric: "300K+", label: "assets across the Flashcards feature", color: "orange", detail: "I defined and directed AI-powered content generation for Rosetta Stone’s Flashcards feature, spanning more than 300,000 assets. The work brought together written copy, images, and audio in support of a core learning experience.", extra: "I also worked hands-on with AI tools on more than 200 assets for 25 SEO landing pages. My remit spans both the acquisition experience and the product people use after signing up.", tags: ["Generative AI", "Content workflows", "Product delivery"] },
@@ -27,11 +25,11 @@ export default function Home() {
             <h1 id="hero-title">Product questions.<br />Shipped <span className="highlight">experiments.<svg viewBox="0 0 520 20" preserveAspectRatio="none" aria-hidden="true"><path d="M4 13 Q220 -2 510 10 M30 18 Q270 6 483 17" /></svg></span></h1>
             <p className="hero-intro">Hi, I’m Merissa. I turn product questions into shipped experiments — connecting customer needs, data, and a willingness to get my hands dirty.</p>
             <p className="hero-role">Currently building at <strong>Rosetta Stone / IXL Learning.</strong></p>
-            <div className="mt-8 flex flex-wrap items-center gap-6"><a className="button button-dark" href="#work">Explore my work <ArrowDown size={17} /></a><a className="text-link" href={`${basePath}/documents/Merissa-Li-Resume.pdf`} target="_blank" rel="noreferrer">Grab my resume <ArrowUpRight size={16} /></a></div>
+            <div className="mt-8 flex flex-wrap items-center gap-6"><a className="button button-dark" href="#work">Explore my work <ArrowDown size={17} /></a><a className="text-link" href="/documents/Merissa-Li-Resume.pdf" target="_blank" rel="noreferrer">Grab my resume <ArrowUpRight size={16} /></a></div>
           </div>
           <div className="portrait-wrap">
             <span className="portrait-spark" aria-hidden="true">✳</span>
-            <div className="portrait-frame"><Image src={`${basePath}/images/merissa-li.jpeg`} alt="Merissa Li smiling outdoors" width={800} height={800} priority sizes="(max-width: 1023px) 80vw, 400px" /><div className="portrait-caption"><span>Hi, I’m Merissa!</span><span aria-hidden="true">↗</span></div></div>
+            <div className="portrait-frame"><Image src="/images/merissa-li.jpeg" alt="Merissa Li smiling outdoors" width={800} height={800} priority sizes="(max-width: 1023px) 80vw, 400px" /><div className="portrait-caption"><span>Hi, I’m Merissa!</span><span aria-hidden="true">↗</span></div></div>
             <div className="portrait-note">curious by default.<br />hands-on by choice.</div>
           </div>
         </section>
