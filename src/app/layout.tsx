@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
 const body = DM_Sans({ variable: "--font-body", subsets: ["latin"], display: "swap" });
-const siteUrl = process.env.PORTFOLIO_SITE_URL || "https://merissali.com";
+const siteUrl = process.env.PORTFOLIO_SITE_URL || (process.env.GITHUB_PAGES_BASE_PATH ? `https://merissali.github.io${process.env.GITHUB_PAGES_BASE_PATH}` : "https://merissali.com");
 const description = "Merissa Li is a hands-on product manager working across growth, experimentation, and AI workflows. Explore selected work at Rosetta Stone, IXL, and Clearco.";
 export const metadata: Metadata = {
   metadataBase: new URL(new URL(siteUrl).origin),
